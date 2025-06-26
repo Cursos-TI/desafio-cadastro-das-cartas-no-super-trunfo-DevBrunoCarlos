@@ -10,6 +10,7 @@ int main() {
     float area1;
     float pib1;
     int pontosTuristicos1;
+    
 
     //variáveis da carta 2.
     char estado2;
@@ -19,6 +20,8 @@ int main() {
     float area2;
     float pib2;
     int pontosTuristicos2;
+    
+
 
     //instruindo usuário - carta 1.
     printf("\ncadastro da carta 1 \n");
@@ -82,7 +85,8 @@ int main() {
     printf("PIB: %.2f bilhoes de reais\n", pib1);
     printf("Quantidade de Pontos Turísticos: %d\n", pontosTuristicos1);
     printf("Densidade populacional: %.2f\n", (float) populacao1 / area1);
-    printf("PIB per capita: %.2f\n\n", (float)populacao1 / pib1);
+    printf("PIB per capita: %.2f\n", (float)populacao1 / pib1);
+    printf("Super poder: %.2f\n\n", (float)populacao1 + area1 + pib1 + (float)pontosTuristicos1 + ((float)populacao1 / pib1) - ((float)populacao1 / area1));
 
     //carta 2.
     printf("Carta 2 \n");
@@ -94,9 +98,20 @@ int main() {
     printf("PIB: %.2f bilhoes de reais\n", pib2);
     printf("Quantidade de Pontos Turísticos: %d\n", pontosTuristicos2);
     printf("Densidade populacional: %.2f\n", (float) populacao2 / area2);
-    printf("PIB per capita: %.2f\n\n", (float)populacao2 / pib2);
+    printf("PIB per capita: %.2f\n", (float)populacao2 / pib2);
+    printf("Super poder: %.2f\n\n", (float)populacao2 + area2 + pib2 + (float)pontosTuristicos2 + ((float)populacao2 / pib2) - ((float)populacao2 / area2));
 
+    //comparação dos atributos, para reconhecer qual carta é a vencedora.
 
+    printf("COMPARAÇÃO DE CARTAS: \n");
+    printf("População: %d\n", populacao1 > populacao2);
+    printf("Área: %d\n", area1 > area2);
+    printf("PIB: %d\n", pib1 > pib2);
+    printf("Pontos Túristicos: %d\n", pontosTuristicos1 > pontosTuristicos2);
+    printf("densidade populacional: %d\n", ((float) populacao1 / area1) < ((float) populacao2 / area2));
+    printf("PIB per capita: %d\n", ((float)populacao1 / pib1) > ((float)populacao2 / pib2));
+    printf("Super Poder: %d\n\n", (float)populacao1 + area1 + pib1 + (float)pontosTuristicos1 + ((float)populacao1 / pib1) - ((float)populacao1 / area1) > (float)populacao2 + area2 + pib2 + (float)pontosTuristicos2 + ((float)populacao2 / pib2) - ((float)populacao2 / area2));
+    
 
     return 0;
 }
